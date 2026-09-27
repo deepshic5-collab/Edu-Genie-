@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>EduGenie — Gemini-Powered Learning Assistant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">✦</span>
+      <span class="brand-name">EduGenie</span>
+    </div>
+    <button id="keyBtn" class="key-btn">API key</button>
+  </header>
+
+  <main class="layout">
+    <aside class="tools">
+      <h2>Ask for</h2>
+      <button class="tool-btn active" data-mode="explain">Explain a topic</button>
+      <button class="tool-btn" data-mode="quiz">Quiz me</button>
+      <button class="tool-btn" data-mode="summarize">Summarize notes</button>
+      <p class="tools-note">Answers come from Google Gemini. Nothing you type is stored anywhere but this browser.</p>
+    </aside>
+
+    <section class="workspace">
+      <div class="field-block">
+        <label id="inputLabel" for="userInput">What topic should I explain?</label>
+        <textarea id="userInput" rows="4" placeholder="e.g. Explain binary search trees like I'm new to data structures"></textarea>
+        <button id="sendBtn">Ask EduGenie</button>
+      </div>
+
+      <div id="output" class="output" aria-live="polite">
+        <p class="placeholder">Your answer will appear here.</p>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="keyDialog">
+    <form method="dialog" class="key-form">
+      <h2>Add your Gemini API key</h2>
+      <p>Get a free key from Google AI Studio. It's saved only in this browser's local storage, never sent anywhere except Google's API.</p>
+      <input id="apiKeyInput" type="password" placeholder="AIza..." autocomplete="off">
+      <div class="key-form-actions">
+        <button value="cancel" class="ghost-btn">Cancel</button>
+        <button value="save" id="saveKeyBtn" class="primary-btn">Save key</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
